@@ -1,0 +1,13 @@
+version: "3"
+services:
+  py-dtdms:
+    image: harbor.huali-tec.com:5443/dtdms/py-dpw:latest
+    restart: always
+    environment:
+      - MQ_HOST=172.16.1.177
+      - MQ_PORT=5672
+      - MQ_USER=huali
+      - MQ_PASS=huali
+    # volumes:
+    #   - /data/py-dtdms/controller_config.conf:/app/controller_config.conf   # 按需将配置文件映射
+    #   - /data/py-dtdms:/app                                                 # 如需将代码目录映射

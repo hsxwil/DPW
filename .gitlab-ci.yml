@@ -1,0 +1,14 @@
+include:
+  - project: common/ci-template
+    ref: master
+    file: 
+      - variables.yaml
+      - docker-build.yaml
+
+stages:
+  - docker-build
+
+docker-build:
+  extends: .docker-build
+  tags:
+    - "DTDMS"
